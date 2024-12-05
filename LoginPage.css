@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: #fff;
+    overflow: hidden;
+    animation: backgroundAnimation 6s infinite alternate;
+}
+
+@keyframes backgroundAnimation {
+    0% { background: linear-gradient(135deg, #6a11cb, #2575fc); }
+    100% { background: linear-gradient(135deg, #2575fc, #6a11cb); }
+}
+
+.login-main, .sign-page {
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    padding: 2rem;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+label {
+    display: block;
+    text-align: left;
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0.5rem 0;
+}
+
+input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 0.8rem;
+    margin: 0.5rem 0 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    outline: none;
+    transition: 0.3s;
+}
+
+input[type="text"]:focus, input[type="password"]:focus {
+    border-color: #2575fc;
+    box-shadow: 0 0 5px rgba(37, 117, 252, 0.5);
+}
+button {
+    background: linear-gradient(45deg, #6a11cb, #2575fc);
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    padding: 0.8rem 1.2rem;
+    margin: 0.5rem;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    animation: buttonBounce 2s infinite ease-in-out;
+}
+
+@keyframes buttonBounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-3px); }
+}
+
+button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(37, 117, 252, 0.5);
+}
+
+button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 5px rgba(37, 117, 252, 0.5);
+}
+
+/* Success and error messages */
+#success, #error, #regesterd-now, #not-registered {
+    font-weight: bold;
+    margin: 1rem 0;
+    display: none;
+    animation: fadeIn 0.5s ease-out;
+}
+
+#success {
+    color: #53f779;
+    font-size: 1.5em;
+}
+
+#error, #not-registered {
+    color: #ff0821;
+    font-size: 1.5em;
+}
+
+.sign-page {
+    display: none;
+    animation: slideIn 0.8s ease-in-out;
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateX(50px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+/* Responsive Design for Tablets and Smaller Screens */
+@media (max-width: 768px) {
+    body {
+        padding: 1rem;
+        text-align: center;
+    }
+
+    .login-main, .sign-page {
+        width: 100%;
+        padding: 1.5rem;
+    }
+
+    label {
+        font-size: 0.9rem;
+    }
+
+    input[type="text"], input[type="password"] {
+        font-size: 0.9rem;
+    }
+
+    button {
+        padding: 0.7rem 1rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Responsive Design for Mobile Screens */
+@media (max-width: 480px) {
+    label {
+        font-size: 0.8rem;
+    }
+
+    input[type="text"], input[type="password"] {
+        font-size: 0.8rem;
+        padding: 0.6rem;
+    }
+
+    button {
+        padding: 0.6rem 0.8rem;
+        font-size: 0.8rem;
+    }
+
+    .login-main, .sign-page {
+        padding: 1rem;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+}
+
+/* Responsive Design for Extra Small Screens */
+@media (max-width: 360px) {
+    label {
+        font-size: 0.7rem;
+    }
+
+    input[type="text"], input[type="password"] {
+        font-size: 0.7rem;
+        padding: 0.5rem;
+    }
+
+    button {
+        padding: 0.5rem 0.7rem;
+        font-size: 0.7rem;
+    }
+}
